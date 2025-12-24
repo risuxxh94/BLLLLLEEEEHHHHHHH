@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Magic for Nomami</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Mountains+of+Christmas:wght@700&display=swap');
+        
+        :root {
+            --bg-dark: #0f172a;
+            --christmas-red: #d42426;
+            --christmas-green: #165b33;
+            --gold: #f8b229;
+            --soft-white: #fff9f2;
+        }
+
+        html, body {
+            margin: 0; padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Festive Gradients for Backgrounds */
+        .screen {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #screen-1 { background: linear-gradient(180deg, #051937, #004d7a, #008793, #00bf72, #a8eb12); }
+        #screen-2 { background: linear-gradient(180deg, #165b33, #1e7d46, #fff9f2); }
+        #screen-3 { background: linear-gradient(180deg, #fff9f2, #f8b229, #d42426); }
+
+        /* Typography Upgrades */
+        .header-text { 
+            font-family: 'Mountains of Christmas', cursive; 
+            color: var(--christmas-red); 
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 10px rgba(212, 36, 38, 0.3);
+            margin: 10px 0;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--christmas-red);
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Image & Card Styling */
+        .photo-frame { 
+            width: 280px; 
+            height: 280px; 
+            border-radius: 50%; /* Circular for the first one */
+            margin-bottom: 25px; 
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-frame:hover { transform: scale(1.05); }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 450px;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .card-img {
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Button Styling */
+        .btn-next {
+            background: var(--christmas-red);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 25px;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(212, 36, 38, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-next:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(212, 36, 38, 0.6);
+            background: #b31d1f;
+        }
+
+        #snow-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            pointer-events: none;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body onclick="playMusic()">
+    <canvas id="snow-canvas"></canvas>
+    
+    <audio id="bg-audio" loop src="https://cdn.pixabay.com/audio/2021/11/24/audio_83036d9758.mp3"></audio>
+
+    <div class="screen" id="screen-1">
+        <img src="https://i.ibb.co/whCpwnZ8/images-3.jpg" class="photo-frame">
+        <h2 class="header-text" style="color: white;">Merry Christmas 🎅</h2>
+        <p style="color: white; opacity: 0.9; font-weight: 300;">A little surprise is waiting for you...</p>
+        <a href="#screen-2" class="btn-next">Open Your Gift 🎁</a>
+    </div>
+
+    <div class="screen" id="screen-2">
+        <div class="glass-card">
+            <p class="header-text" style="font-size: 1.8rem;">a little christmas thought... 🎄</p>
+            <img src="https://i.ibb.co/zTqm8Kt5/images-4.jpg" class="card-img">
+            
+            <h1>HUUUURR NOOOOOOOOOMMMMAAAMMMIIIIIII 🫶🏻😝❤️‍🩹</h1>
+            
+            <p>I wanted to do a tiny something this Christmas, because you mean a lot to me. Wo bs chota sa gift meri taraf se... just wanted to make your day memorable 🥰.. tmko Christmas bahut psnd h naa.. 👉🏻👈🏻🥺.</p>
+            
+            <a href="#screen-3" class="btn-next" style="background: var(--christmas-green);">Keep Scrolling ✨</a>
+        </div>
+    </div>
+
+    <div class="screen" id="screen-3">
+        <div class="glass-card">
+            <img src="https://i.ibb.co/GfMdhB2r/Snapchat-560116466.jpg" class="card-img">
+            
+            <h2 class="header-text">A Final Note 💌</h2>
+            
+            <p style="font-weight: 600;">HAAAAAAAAAAAAPPPPPPPPPPPIIIIIIIEEESSSSSTTTTTTTTTTTTTTT MEEEEEERRYYYYY CHRRRIIISTMASSSSS NOMAAAAMMMMMIIIIIIIIIIIIIIIIIIIIIII 🫶🏻❤️‍🩹</p>
+            
+            <p>Kaisa laga surprise? Itna achha nhi h but tried my best.. KYA GIFT CHAIYE MANGO SB MILEGA IDHR.. JLDI SE PARTY KHATAM KROOOOO!!</p>
+            
+            <p style="font-size: 1.5rem;"><strong>BLLLLLEEEEHHHHHHH 🫶🏻😝</strong></p>
+            <a href="#screen-1" class="btn-next">Back to Top ❤️</a>
+        </div>
+    </div>
+
+    <script>
+        function playMusic() {
+            document.getElementById('bg-audio').play();
+        }
+
+        const canvas = document.getElementById('snow-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        
+        function resize() { 
+            canvas.width = window.innerWidth; 
+            canvas.height = window.innerHeight; 
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        for(let i = 0; i < 120; i++) {
+            particles.push({ 
+                x: Math.random() * canvas.width, 
+                y: Math.random() * canvas.height, 
+                r: Math.random() * 3 + 1, 
+                d: Math.random() * 1,
+                speed: Math.random() * 1 + 0.5
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+            ctx.beginPath();
+            for(let p of particles) {
+                ctx.moveTo(p.x, p.y);
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
+                p.y += p.speed;
+                p.x += Math.sin(p.d) * 0.5;
+                if(p.y > canvas.height) { 
+                    p.y = -10; 
+                    p.x = Math.random() * canvas.width; 
+                }
+            }
+            ctx.fill();
+        }
+        setInterval(draw, 30);
+    </script>
+</body>
+</html>
